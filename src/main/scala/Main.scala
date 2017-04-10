@@ -83,7 +83,7 @@ object Main extends App {
 
 
   // A stream of a text message sent and received over WebSocket
-  val source8 = Source.tick(0 seconds, 2 seconds, TextMessage.Strict("Hello World!"))
+  val source8 = Source.tick(0 seconds, 2 seconds, TextMessage.Strict("Hello WebSocket!"))
   val sink8: Sink[Message, Future[Done]] = Sink.foreach {
     case TextMessage.Strict(msg) => println(msg)
     case _ =>
